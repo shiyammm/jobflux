@@ -12,6 +12,7 @@ import {
 } from '../src/index';
 import '../src/App.css';
 import { ThemeProvider } from './components/theme-provider';
+import ProtectedRoute from './components/ProtectedRoute';
 
 const App = () => {
   const router = createBrowserRouter([
@@ -24,27 +25,51 @@ const App = () => {
         },
         {
           path: '/onboarding',
-          element: <OnboardingPage />,
+          element: (
+            <ProtectedRoute>
+              <OnboardingPage />
+            </ProtectedRoute>
+          ),
         },
         {
           path: '/jobs',
-          element: <JobListing />,
+          element: (
+            <ProtectedRoute>
+              <JobListing />
+            </ProtectedRoute>
+          ),
         },
         {
           path: '/post-job',
-          element: <PostJob />,
+          element: (
+            <ProtectedRoute>
+              <PostJob />
+            </ProtectedRoute>
+          ),
         },
         {
           path: '/jobs/:id',
-          element: <JobPage />,
+          element: (
+            <ProtectedRoute>
+              <JobPage />
+            </ProtectedRoute>
+          ),
         },
         {
           path: '/saved-jobs',
-          element: <SavedJobs />,
+          element: (
+            <ProtectedRoute>
+              <SavedJobs />
+            </ProtectedRoute>
+          ),
         },
         {
           path: '/my-jobs',
-          element: <MyJobs />,
+          element: (
+            <ProtectedRoute>
+              <MyJobs />
+            </ProtectedRoute>
+          ),
         },
       ],
     },

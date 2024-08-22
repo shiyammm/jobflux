@@ -91,9 +91,9 @@ const LandingPage = () => {
       </section>
       <>
         <Accordion type="single" collapsible>
-          {faqs.map(({ question, answer, i }) => {
+          {faqs.map(({ question, answer, id }) => {
             return (
-              <AccordionItem value={`item-${i + 1}`} key={i}>
+              <AccordionItem value={`item-${id}`} key={id}>
                 <AccordionTrigger>{question}</AccordionTrigger>
                 <AccordionContent>{answer} </AccordionContent>
               </AccordionItem>
